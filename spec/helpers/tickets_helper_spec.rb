@@ -11,5 +11,12 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe TicketsHelper, type: :helper do
-
+        it 'returns a number with a country code' do 
+            formatted_phone_number = '+15418675309'
+            expect(format_phone_number('5418675309')).to eq(formatted_phone_number)
+        end
+        it 'returns nil when number is invalid' do
+            expect(format_phone_number('something_else')).to be_nil
+        end    
+    end
 end

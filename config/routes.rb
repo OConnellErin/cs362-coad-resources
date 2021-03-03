@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :tickets, only: [:new, :create, :show]
   get '/ticket_submitted' => 'static_pages#ticket_submitted'
-  get '/organization_expectations' => 'static_pages#organization_expectations'
+  get '/organization_expectations' => 'static_pages#organization_expectations' 
   post '/tickets/:id/capture', to: 'tickets#capture', as: 'capture_ticket'
   post '/tickets/:id/release', to: 'tickets#release', as: 'release_ticket'
   patch '/tickets/:id/close', to: 'tickets#close', as: 'close_ticket'

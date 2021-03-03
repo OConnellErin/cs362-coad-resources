@@ -12,4 +12,23 @@ require 'rails_helper'
 # end
 RSpec.describe DashboardHelper, type: :helper do
 
-end
+    describe '#dashboard_for' do
+        context 'admin users' do
+            it 'returns admin_dashboard' do
+                user = double()
+                allow(user).to receive(:admin?) { true }
+                expect(dashboard_for(user)).to eq('admin_dashboard')
+            end
+        end
+        context 'organization users with a submitted oragnization' do
+            it ' returns organization_submitted_dashboard' do
+                user = double()
+                allow(user).to receive(:admin?) { false }
+                allow(user).to receive_message_chain(:oragnization, :submitted?) { true }
+                expect(dashboard_for(user)).to eq('organization_submitted_dashboard')         
+            end
+        end
+    end
+end            
+
+#this was covered in class 03/02/21

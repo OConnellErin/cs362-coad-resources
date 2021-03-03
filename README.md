@@ -39,8 +39,6 @@ Start the app:
 rails server
 ```
 
-## Testing
-
 This project uses RSpec for testing.
 
 ```

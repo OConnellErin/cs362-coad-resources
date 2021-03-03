@@ -16,7 +16,7 @@ gem 'puma', '~> 3.12'
 gem 'rails', '~> 5.2.4.1'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sassc-rails'
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.4.2'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -47,3 +47,4 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
